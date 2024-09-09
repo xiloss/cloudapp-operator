@@ -1,0 +1,23 @@
+# permissions for end users to view webapps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: febe-app-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: webapp-viewer-role
+rules:
+- apiGroups:
+  - apps.xiloss.com
+  resources:
+  - webapps
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps.xiloss.com
+  resources:
+  - webapps/status
+  verbs:
+  - get
