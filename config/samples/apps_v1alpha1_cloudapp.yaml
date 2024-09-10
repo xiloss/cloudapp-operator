@@ -6,4 +6,34 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: cloudapp-sample
 spec:
-  # TODO(user): Add fields here
+  cloudAppWebApp:
+    metadata:
+      labels:
+        app.kubernetes.io/name: cloudapp-operator
+        app.kubernetes.io/managed-by: kustomize
+      name: webapp-sample
+      namespace: cloudapp-sample
+    spec:
+      webAppReplicas: 1
+      webAppImage: nginx:latest
+      webAppDeploymentExpose: true
+      webAppServicePorts:
+        - name: http
+          protocol: TCP
+          port: 80
+      webAppServiceType: ClusterIP
+  cloudAppDbService:
+    metadata:
+      labels:
+        app.kubernetes.io/name: cloudapp-operator
+        app.kubernetes.io/managed-by: kustomize
+      name: dbservice-sample
+    spec:
+      dbServiceStsReplicas: 3
+      dbServiceStsImage: mysql:latest
+      dbServiceStsExpose: false
+      dbServiceSvcPorts:
+        - name: mysql
+          protocol: TCP
+          port: 3306
+      dbServiceSvcType: ClusterIP

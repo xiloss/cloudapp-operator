@@ -8,7 +8,7 @@ rules:
   - apps.xiloss.com
   resources:
   - cloudapps
-  - dbapps
+  - dbservices
   - webapps
   verbs:
   - create
@@ -22,7 +22,7 @@ rules:
   - apps.xiloss.com
   resources:
   - cloudapps/finalizers
-  - dbapps/finalizers
+  - dbservices/finalizers
   - webapps/finalizers
   verbs:
   - update
@@ -30,7 +30,7 @@ rules:
   - apps.xiloss.com
   resources:
   - cloudapps/status
-  - dbapps/status
+  - dbservices/status
   - webapps/status
   verbs:
   - get

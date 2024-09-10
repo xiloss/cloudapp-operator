@@ -3,7 +3,6 @@
 # It should be run by config/default
 resources:
 - bases/apps.xiloss.com_webapps.yaml
-- bases/apps.xiloss.com_dbapps.yaml
 - bases/apps.xiloss.com_cloudapps.yaml
 - bases/apps.xiloss.com_dbservices.yaml
 # +kubebuilder:scaffold:crdkustomizeresource

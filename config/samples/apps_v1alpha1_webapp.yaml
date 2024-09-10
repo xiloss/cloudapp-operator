@@ -1,9 +1,23 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cloudapp-sample
+---
 apiVersion: apps.xiloss.com/v1alpha1
 kind: WebApp
 metadata:
   labels:
-    app.kubernetes.io/name: febe-app-operator
+    app.kubernetes.io/name: cloudapp-operator
     app.kubernetes.io/managed-by: kustomize
   name: webapp-sample
+  namespace: cloudapp-sample
 spec:
-  # TODO(user): Add fields here
+  webAppReplicas: 1
+  webAppImage: nginx:latest
+  webAppDeploymentExpose: true
+  webAppServicePorts:
+    - name: http
+      protocol: TCP
+      port: 80
+  webAppServiceType: ClusterIP

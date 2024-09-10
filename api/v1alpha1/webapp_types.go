@@ -28,15 +28,15 @@ import (
 type WebAppSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 	// WebAppDeploymentReplicas is the number of replicas of a webserver deployment
-	WebAppDeploymentReplicas int32 `json:"webServerReplicas,omitempty"`
+	WebAppDeploymentReplicas int32 `json:"webAppReplicas,omitempty"`
 	// WebAppDeploymentImage is the container image field of WebApp.
-	WebAppDeploymentImage string `json:"webServerImage,omitempty"`
+	WebAppDeploymentImage string `json:"webAppImage,omitempty"`
 	// WebAppDeploymentExpose is the control to expose a WebApp deployment as a service
-	WebAppDeploymentExpose bool `json:"webServerExpose,omitempty"`
+	WebAppDeploymentExpose bool `json:"webAppDeploymentExpose,omitempty"`
 	// WebAppServicePorts is the list of maps of WebApp service ports to be exposed
-	WebAppServicePorts []corev1.ServicePort `json:"webServerServicePorts,omitempty"`
+	WebAppServicePorts []corev1.ServicePort `json:"webAppServicePorts,omitempty"`
 	// WebAppServiceType is the type of service used to expose the deployment
-	WebAppServiceType corev1.ServiceType `json:"webServerServiceType,omitempty"`
+	WebAppServiceType corev1.ServiceType `json:"webAppServiceType,omitempty"`
 }
 
 // WebAppStatus defines the observed state of WebApp

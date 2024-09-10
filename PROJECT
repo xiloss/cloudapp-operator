@@ -5,8 +5,8 @@
 domain: xiloss.com
 layout:
 - go.kubebuilder.io/v4
-projectName: febe-app-operator
-repo: febe-app-operator
+projectName: cloudapp-operator
+repo: cloudapp-operator
 resources:
 - api:
     crdVersion: v1
@@ -15,16 +15,7 @@ resources:
   domain: xiloss.com
   group: apps
   kind: WebApp
-  path: febe-app-operator/api/v1alpha1
-  version: v1alpha1
-- api:
-    crdVersion: v1
-    namespaced: true
-  controller: true
-  domain: xiloss.com
-  group: apps
-  kind: DbApp
-  path: febe-app-operator/api/v1alpha1
+  path: cloudapp-operator/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -33,7 +24,7 @@ resources:
   domain: xiloss.com
   group: apps
   kind: CloudApp
-  path: febe-app-operator/api/v1alpha1
+  path: cloudapp-operator/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -42,6 +33,6 @@ resources:
   domain: xiloss.com
   group: apps
   kind: DbService
-  path: febe-app-operator/api/v1alpha1
+  path: cloudapp-operator/api/v1alpha1
   version: v1alpha1
 version: "3"

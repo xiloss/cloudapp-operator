@@ -151,13 +151,6 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "WebApp")
 		os.Exit(1)
 	}
-	if err = (&controller.DbAppReconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
-	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "DbApp")
-		os.Exit(1)
-	}
 	if err = (&controller.CloudAppReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),

@@ -39,21 +39,21 @@ spec:
           spec:
             description: WebAppSpec defines the desired state of WebApp
             properties:
-              webServerExpose:
+              webAppDeploymentExpose:
                 description: WebAppDeploymentExpose is the control to expose a WebApp
                   deployment as a service
                 type: boolean
-              webServerImage:
+              webAppImage:
                 description: WebAppDeploymentImage is the container image field of
                   WebApp.
                 type: string
-              webServerReplicas:
+              webAppReplicas:
                 description: |-
                   Important: Run "make" to regenerate code after modifying this file
                   WebAppDeploymentReplicas is the number of replicas of a webserver deployment
                 format: int32
                 type: integer
-              webServerServicePorts:
+              webAppServicePorts:
                 description: WebAppServicePorts is the list of maps of WebApp service
                   ports to be exposed
                 items:
@@ -126,7 +126,7 @@ spec:
                   - port
                   type: object
                 type: array
-              webServerServiceType:
+              webAppServiceType:
                 description: WebAppServiceType is the type of service used to expose
                   the deployment
                 type: string
