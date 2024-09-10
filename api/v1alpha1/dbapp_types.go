@@ -24,23 +24,23 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// WebAppSpec defines the desired state of WebApp
-type WebAppSpec struct {
+// DbAppSpec defines the desired state of DbApp
+type DbAppSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
-	// WebAppDeploymentReplicas is the number of replicas of a webserver deployment
-	WebAppDeploymentReplicas int32 `json:"webServerReplicas,omitempty"`
-	// WebAppDeploymentImage is the container image field of WebApp.
-	WebAppDeploymentImage string `json:"webServerImage,omitempty"`
-	// WebAppDeploymentExpose is the control to expose a WebApp deployment as a service
-	WebAppDeploymentExpose bool `json:"webServerExpose,omitempty"`
-	// WebAppServicePorts is the list of maps of WebApp service ports to be exposed
-	WebAppServicePorts []corev1.ServicePort `json:"webServerServicePorts,omitempty"`
-	// WebAppServiceType is the type of service used to expose the deployment
-	WebAppServiceType corev1.ServiceType `json:"webServerServiceType,omitempty"`
+	// DbAppStsReplicas is the number of replicas of a db server stateful set
+	DbAppStsReplicas int32 `json:"dbAppStsReplicas,omitempty"`
+	// DbAppDeploymentImage is the container image field of DbApp.
+	DbAppDeploymentImage string `json:"dbServerImage,omitempty"`
+	// DbAppDeploymentExpose is the control to expose a DbApp deployment as a service
+	DbAppDeploymentExpose bool `json:"dbServerExpose,omitempty"`
+	// DbAppServicePorts is the list of maps of DbApp service ports to be exposed
+	DbAppServicePorts []corev1.ServicePort `json:"dbServerServicePorts,omitempty"`
+	// DbAppServiceType is the type of service used to expose the stateful set
+	DbAppServiceType corev1.ServiceType `json:"dbServerServiceType,omitempty"`
 }
 
-// WebAppStatus defines the observed state of WebApp
-type WebAppStatus struct {
+// DbAppStatus defines the observed state of DbApp
+type DbAppStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 }
@@ -48,24 +48,24 @@ type WebAppStatus struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 
-// WebApp is the Schema for the webapps API
-type WebApp struct {
+// DbApp is the Schema for the dbapps API
+type DbApp struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   WebAppSpec   `json:"spec,omitempty"`
-	Status WebAppStatus `json:"status,omitempty"`
+	Spec   DbAppSpec   `json:"spec,omitempty"`
+	Status DbAppStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// WebAppList contains a list of WebApp
-type WebAppList struct {
+// DbAppList contains a list of DbApp
+type DbAppList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []WebApp `json:"items"`
+	Items           []DbApp `json:"items"`
 }
 
 func init() {
-	SchemeBuilder.Register(&WebApp{}, &WebAppList{})
+	SchemeBuilder.Register(&DbApp{}, &DbAppList{})
 }

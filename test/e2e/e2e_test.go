@@ -27,7 +27,7 @@ import (
 	"febe-app-operator/test/utils"
 )
 
-const namespace = "febe-app-operator-system"
+const namespace = "febe-app-operator"
 
 var _ = Describe("controller", Ordered, func() {
 	BeforeAll(func() {

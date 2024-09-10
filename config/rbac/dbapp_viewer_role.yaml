@@ -1,35 +1,23 @@
----
+# permissions for end users to view dbapps.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: manager-role
+  labels:
+    app.kubernetes.io/name: febe-app-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: dbapp-viewer-role
 rules:
 - apiGroups:
   - apps.xiloss.com
   resources:
   - dbapps
-  - webapps
   verbs:
-  - create
-  - delete
   - get
   - list
-  - patch
-  - update
   - watch
 - apiGroups:
   - apps.xiloss.com
   resources:
-  - dbapps/finalizers
-  - webapps/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - apps.xiloss.com
-  resources:
   - dbapps/status
-  - webapps/status
   verbs:
   - get
-  - patch
-  - update

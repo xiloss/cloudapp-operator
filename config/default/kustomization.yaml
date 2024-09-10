@@ -1,5 +1,5 @@
 # Adds namespace to all resources.
-namespace: febe-app-operator-system
+namespace: febe-app-operator
 
 # Value of this field is prepended to the
 # names of all resources, e.g. a deployment named
@@ -9,7 +9,7 @@ namespace: febe-app-operator-system
 namePrefix: febe-app-operator-
 
 # Labels to add to all resources and selectors.
-#labels:
+#labels:system
 #- includeSelectors: true
 #  pairs:
 #    someName: someValue

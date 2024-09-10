@@ -1,14 +1,16 @@
----
+# permissions for end users to edit dbapps.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: manager-role
+  labels:
+    app.kubernetes.io/name: febe-app-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: dbapp-editor-role
 rules:
 - apiGroups:
   - apps.xiloss.com
   resources:
   - dbapps
-  - webapps
   verbs:
   - create
   - delete
@@ -20,16 +22,6 @@ rules:
 - apiGroups:
   - apps.xiloss.com
   resources:
-  - dbapps/finalizers
-  - webapps/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - apps.xiloss.com
-  resources:
   - dbapps/status
-  - webapps/status
   verbs:
   - get
-  - patch
-  - update

@@ -17,4 +17,13 @@ resources:
   kind: WebApp
   path: febe-app-operator/api/v1alpha1
   version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: xiloss.com
+  group: apps
+  kind: DbApp
+  path: febe-app-operator/api/v1alpha1
+  version: v1alpha1
 version: "3"

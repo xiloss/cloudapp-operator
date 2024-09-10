@@ -1,8 +1,9 @@
-apiVersion: v1
-kind: ServiceAccount
+apiVersion: apps.xiloss.com/v1alpha1
+kind: DbApp
 metadata:
   labels:
     app.kubernetes.io/name: febe-app-operator
     app.kubernetes.io/managed-by: kustomize
-  name: controller-manager
-  namespace: febe-app-operator
+  name: dbapp-sample
+spec:
+  # TODO(user): Add fields here
