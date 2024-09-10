@@ -30,7 +30,7 @@ import (
 	appsv1alpha1 "febe-app-operator/api/v1alpha1"
 )
 
-var _ = Describe("DbApp Controller", func() {
+var _ = Describe("DbService Controller", func() {
 	Context("When reconciling a resource", func() {
 		const resourceName = "test-resource"
 
@@ -40,13 +40,13 @@ var _ = Describe("DbApp Controller", func() {
 			Name:      resourceName,
 			Namespace: "default", // TODO(user):Modify as needed
 		}
-		dbapp := &appsv1alpha1.DbApp{}
+		dbservice := &appsv1alpha1.DbService{}
 
 		BeforeEach(func() {
-			By("creating the custom resource for the Kind DbApp")
-			err := k8sClient.Get(ctx, typeNamespacedName, dbapp)
+			By("creating the custom resource for the Kind DbService")
+			err := k8sClient.Get(ctx, typeNamespacedName, dbservice)
 			if err != nil && errors.IsNotFound(err) {
-				resource := &appsv1alpha1.DbApp{
+				resource := &appsv1alpha1.DbService{
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      resourceName,
 						Namespace: "default",
@@ -59,16 +59,16 @@ var _ = Describe("DbApp Controller", func() {
 
 		AfterEach(func() {
 			// TODO(user): Cleanup logic after each test, like removing the resource instance.
-			resource := &appsv1alpha1.DbApp{}
+			resource := &appsv1alpha1.DbService{}
 			err := k8sClient.Get(ctx, typeNamespacedName, resource)
 			Expect(err).NotTo(HaveOccurred())
 
-			By("Cleanup the specific resource instance DbApp")
+			By("Cleanup the specific resource instance DbService")
 			Expect(k8sClient.Delete(ctx, resource)).To(Succeed())
 		})
 		It("should successfully reconcile the resource", func() {
 			By("Reconciling the created resource")
-			controllerReconciler := &DbAppReconciler{
+			controllerReconciler := &DbServiceReconciler{
 				Client: k8sClient,
 				Scheme: k8sClient.Scheme(),
 			}

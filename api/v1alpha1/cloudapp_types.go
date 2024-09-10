@@ -30,8 +30,8 @@ type CloudAppSpec struct {
 
 	// CloudAppWebApp is a web application of a CloudApp
 	CloudAppWebApp WebApp `json:"cloudAppWebApp,omitempty"`
-	// CloudAppDbApp is a db service of a CloudApp
-	CloudAppDbApp DbApp `json:"cloudAppDbApp,omitempty"`
+	// CloudAppDbService is a db service of a CloudApp
+	CloudAppDbService DbService `json:"cloudAppDbService,omitempty"`
 }
 
 // CloudAppStatus defines the observed state of CloudApp

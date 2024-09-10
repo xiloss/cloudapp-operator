@@ -5,6 +5,7 @@ resources:
 - bases/apps.xiloss.com_webapps.yaml
 - bases/apps.xiloss.com_dbapps.yaml
 - bases/apps.xiloss.com_cloudapps.yaml
+- bases/apps.xiloss.com_dbservices.yaml
 # +kubebuilder:scaffold:crdkustomizeresource
 
 patches:
@@ -17,6 +18,7 @@ patches:
 #- path: patches/cainjection_in_webapps.yaml
 #- path: patches/cainjection_in_dbapps.yaml
 #- path: patches/cainjection_in_cloudapps.yaml
+#- path: patches/cainjection_in_dbservices.yaml
 # +kubebuilder:scaffold:crdkustomizecainjectionpatch
 
 # [WEBHOOK] To enable webhook, uncomment the following section

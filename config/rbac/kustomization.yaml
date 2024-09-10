@@ -22,6 +22,8 @@ resources:
 # default, aiding admins in cluster management. Those roles are
 # not used by the Project itself. You can comment the following lines
 # if you do not want those helpers be installed with your Project.
+- dbservice_editor_role.yaml
+- dbservice_viewer_role.yaml
 - cloudapp_editor_role.yaml
 - cloudapp_viewer_role.yaml
 - dbapp_editor_role.yaml
