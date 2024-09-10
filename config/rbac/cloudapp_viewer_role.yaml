@@ -1,0 +1,23 @@
+# permissions for end users to view cloudapps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: febe-app-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: cloudapp-viewer-role
+rules:
+- apiGroups:
+  - apps.xiloss.com
+  resources:
+  - cloudapps
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps.xiloss.com
+  resources:
+  - cloudapps/status
+  verbs:
+  - get

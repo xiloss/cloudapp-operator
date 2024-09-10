@@ -2,4 +2,5 @@
 resources:
 - apps_v1alpha1_webapp.yaml
 - apps_v1alpha1_dbapp.yaml
+- apps_v1alpha1_cloudapp.yaml
 # +kubebuilder:scaffold:manifestskustomizesamples
