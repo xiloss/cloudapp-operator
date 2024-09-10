@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/febe-app-operator.iml" filepath="$PROJECT_DIR$/.idea/febe-app-operator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cloudapp-operator.iml" filepath="$PROJECT_DIR$/.idea/cloudapp-operator.iml" />
     </modules>
   </component>
 </project>

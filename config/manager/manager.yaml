@@ -11,7 +11,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: controller-manager
-  namespace: febe-app-operator
+  namespace: cloudapp-operator
   labels:
     control-plane: controller-manager
     app.kubernetes.io/name: febe-app-operator
